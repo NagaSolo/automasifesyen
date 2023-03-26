@@ -19,3 +19,9 @@ ensure that the 3 images are automatically scraped (downloaded) into a folder la
 - Please submit the code on a git repo, try to follow best practices as much as possible
 from writing good commit messages, clean code, testing, having scalability in mind as
 well, provide your suggested architecture and why you chose each component.
+
+##### Case 1 Approach
+- Based on given example of the given url, https://www2.hm.com/en_my/productpage.1122404001.html , it can be concluded that, items from the `Article Number` column can be substituted with given number of the url.
+- However, after extracting input needed from provided dataset, some of items number can not be substituted into the url. For example, first row with article number `684021184` supposed to be `0684021184`, but once the file has been opened in the current workspace, initial zero has been truncated.
+- The file also contains many Nan values.
+- To mitigate issue temporarily, we will be using pandas to read excel file, drop rows with Nan values, and read `Article Number` column as integer then as string.
