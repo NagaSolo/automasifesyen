@@ -25,3 +25,16 @@ well, provide your suggested architecture and why you chose each component.
 - However, after extracting input needed from provided dataset, some of items number can not be substituted into the url. For example, first row with article number `684021184` supposed to be `0684021184`, but once the file has been opened in the current workspace, initial zero has been truncated.
 - The file also contains many Nan values.
 - To mitigate issue temporarily, we will be using pandas to read excel file, drop rows with Nan values, and read `Article Number` column as integer then as string.
+
+- further processing by + '0' to the article number that has less than 10 characters.
+
+- Initial run using scrapy and validation, some of items cannot be found list of items that have not been found is as follows:
+    - Article Number | Product Name | Color
+    - 0970818051 | Relaxed Fit Sweatshirt | Light grey marl
+    - 1009953017 | Nylon cargo joggers | Light grey
+    - 1025932014 | Ribbed top | Light purple
+    - 1107360014 | Wide twill trousers | Dark brown
+    - 1119685001 | Reversible-sequin T-shirt | Light green/T. rex
+    - 1119685003 | Reversible-sequin T-shirt | Grey/Dragon
+    - 1121412001 | Short-sleeved cotton shirt | Light blue/Striped
+    - 1150469003 | Cotton T-shirt | Light green
