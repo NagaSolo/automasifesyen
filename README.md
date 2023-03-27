@@ -38,3 +38,16 @@ well, provide your suggested architecture and why you chose each component.
     - 1119685003 | Reversible-sequin T-shirt | Grey/Dragon
     - 1121412001 | Short-sleeved cotton shirt | Light blue/Striped
     - 1150469003 | Cotton T-shirt | Light green
+
+- Failure to find remaining images using BeautifulSoup4
+- Too complex to scrape using scrapy for now
+- Not enough time to properly scrap using Selenium
+- Downloading using playwright (able to load dynamic pages but less configuration compared to selenium)
+
+##### Case 1 Process
+
+- at folder `01_CHECKING_ARTICLES_URLS`, we first read provided input using `file_reader.py`
+- next using scrapy, we checked for valid article url using `HMProductPage.py`  and output it to `available_articles.csv`, unavailable files could be found above.
+- at folder `02_DOWNLOADING_ARTICLES`, we used data from first step `available_articles.csv` to scrape necessary images.
+- script to scrape is using `playwright` package and name `PlaywrightDownload.py`.
+- all output images are available at `Output` folder directory.
